@@ -10,11 +10,11 @@
   },
   "channels": {
     "main": {
-      "name": "유튜브 메인채널",
+      "name": "차트서포터의 유튜브 HOT",
       "description": "시장 분석 · 주요 이슈"
     },
     "sub": {
-      "name": "유튜브 서브채널",
+      "name": "의리코인의 유튜브 HOT",
       "description": "차트 교육 · 거래 가이드"
     }
   },
