@@ -1,5 +1,40 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FREEDOM Admin</title><style>
 :root{--bg:#070707;--panel:#101011;--line:#29292c;--text:#f7f7f7;--muted:#95959c;--orange:#ff8a00}*{box-sizing:border-box}body{margin:0;background:#070707;color:var(--text);font-family:Pretendard,"Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:-.02em}.wrap{width:min(1220px,calc(100% - 32px));margin:auto}.top{position:sticky;top:0;z-index:10;background:rgba(7,7,7,.94);backdrop-filter:blur(16px);border-bottom:1px solid #1e1e20}.top .wrap{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{font-weight:950}.actions,.toolbar{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid #303033;background:#121214;color:#fff;border-radius:11px;padding:10px 13px;font-weight:800;cursor:pointer;text-decoration:none}.btn.primary{background:linear-gradient(135deg,#ff8a00,#ffb347);color:#111;border:none}.btn.danger{border-color:#5b2b2b;color:#ffaaaa}.grid{display:grid;grid-template-columns:220px 1fr;gap:22px;padding:28px 0 80px}.side{position:sticky;top:92px;height:max-content}.side button{display:block;width:100%;text-align:left;margin-bottom:7px;padding:11px 12px;border-radius:10px;border:1px solid transparent;background:transparent;color:#aaa;cursor:pointer}.side button.active,.side button:hover{background:#141416;border-color:#29292c;color:#fff}.panel{display:none}.panel.active{display:block}.card{background:linear-gradient(180deg,#111113,#0c0c0d);border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:16px}.card h2,.card h3{margin-top:0}.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{margin-bottom:14px}.field label{display:block;color:#aaa;font-size:12px;margin-bottom:6px}.field input,.field textarea,.field select{width:100%;border:1px solid #303033;background:#09090a;color:#fff;border-radius:10px;padding:11px 12px;outline:none}.field textarea{min-height:90px;resize:vertical}.field input:focus,.field textarea:focus,.field select:focus{border-color:#805015}.item{border:1px solid #242426;border-radius:14px;padding:15px;margin-top:12px}.itemHead{display:flex;align-items:center;justify-content:space-between;gap:12px}.muted{color:var(--muted);font-size:12px}.status{padding:9px 12px;border-radius:10px;background:#101c12;color:#8fe3a3;font-size:12px;display:none}.login{width:min(420px,calc(100% - 32px));margin:12vh auto;background:#101011;border:1px solid #29292c;border-radius:20px;padding:24px}.login h1{margin-top:0}.login .btn{width:100%;margin-top:8px}.hidden{display:none!important}.pageTabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.pageTabs button{border:1px solid #2c2c2f;background:#0d0d0f;color:#aaa;padding:9px 12px;border-radius:10px;cursor:pointer}.pageTabs button.active{color:#111;background:#ff9b22;border-color:#ff9b22;font-weight:900}.subcard{border:1px solid #222225;border-radius:14px;padding:14px;margin-top:12px;background:#0b0b0c}.sectionTitle{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:18px 0 8px}.sectionTitle h3{margin:0}.mini{font-size:11px;color:#777}.hr{height:1px;background:#232326;margin:18px 0}@media(max-width:800px){.grid{grid-template-columns:1fr}.side{position:static;display:flex;overflow:auto;gap:6px}.side button{white-space:nowrap;width:auto}.row{grid-template-columns:1fr}.top .wrap{padding:12px 0;align-items:flex-start;flex-direction:column}}
+
+@media(max-width:800px){
+  body{font-size:14px;line-height:1.55}
+  .wrap{width:calc(100% - 20px)}
+  .top .wrap{padding:10px 0;gap:10px}
+  .brand{font-size:15px}
+  .grid{padding:16px 0 54px;gap:14px}
+  .side{margin:0 -4px;padding:0 4px 6px;scrollbar-width:none}
+  .side::-webkit-scrollbar{display:none}
+  .side button{min-height:42px;padding:10px 12px;font-size:12px}
+  .card{padding:15px;border-radius:15px}
+  .card h2{font-size:20px;line-height:1.3}
+  .card h3{font-size:16px;line-height:1.35}
+  .item,.subcard{padding:13px;border-radius:12px}
+  .field{margin-bottom:12px}
+  .field label{font-size:12px;line-height:1.35}
+  .field input,.field textarea,.field select{font-size:16px;min-height:46px;padding:11px 12px}
+  .field textarea{min-height:110px;line-height:1.55}
+  .btn{min-height:44px;padding:10px 12px;font-size:12px}
+  .actions,.toolbar{gap:7px}
+  .actions .btn{flex:1}
+  .pageTabs{gap:6px;overflow:auto;flex-wrap:nowrap;padding-bottom:4px;scrollbar-width:none}
+  .pageTabs::-webkit-scrollbar{display:none}
+  .pageTabs button{min-height:42px;padding:9px 12px;white-space:nowrap;font-size:12px}
+  .itemHead{align-items:flex-start;flex-wrap:wrap}
+  .muted{font-size:11px;line-height:1.55}
+}
+@media(max-width:480px){
+  .login{margin:8vh auto;padding:18px}
+  .top .wrap{align-items:stretch}
+  .actions{width:100%}
+  .actions .btn{width:100%}
+  .toolbar{display:grid;grid-template-columns:1fr}
+  .toolbar .btn{width:100%}
+}
 </style></head><body>
 <div id="login" class="login"><h1>FREEDOM 관리자</h1><p class="muted">디자인 코드는 고정하고 콘텐츠와 링크만 운영합니다.</p><div class="field"><label>관리자 비밀번호</label><input id="password" type="password" autocomplete="current-password"></div><button class="btn primary" onclick="login()">로그인</button><p id="loginMsg" class="muted"></p></div>
 <div id="app" class="hidden"><div class="top"><div class="wrap"><div><div class="brand">FREEDOM ADMIN</div><div class="muted">링크 · 가이드 · 이벤트 · 영상 콘텐츠 관리</div></div><div class="actions"><span id="saveStatus" class="status">저장됨</span><button class="btn" onclick="location.href='/'">사이트 보기</button><button class="btn primary" onclick="saveAll()">전체 저장</button></div></div></div><div class="wrap grid"><aside class="side"><button class="active" data-tab="links">기본 링크</button><button data-tab="guides">메인 가이드 버튼</button><button data-tab="pages">멀티페이지 콘텐츠</button><button data-tab="channels">유튜브 채널</button><button data-tab="youtubeAuto">유튜브 자동 연동</button><button data-tab="heroImage">메인 상단 이미지</button><button data-tab="orangexImage">OrangeX 이미지</button><button data-tab="videos">영상 카드</button><button data-tab="backup">백업/복원</button></aside><main>
