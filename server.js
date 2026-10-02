@@ -2,6 +2,7 @@ const http=require('http');const fs=require('fs');const path=require('path');con
 const ROOT=__dirname,PUBLIC=path.join(ROOT,'public'),DATA=process.env.DATA_DIR||path.join(ROOT,'data'),CONFIG=path.join(DATA,'site-config.json'),SEED=path.join(ROOT,'data','site-config.json'),BACKUPS=path.join(DATA,'backups');
 const PORT=process.env.PORT||3000,ADMIN_PASSWORD=process.env.ADMIN_PASSWORD||'',sessions=new Map();
 fs.mkdirSync(DATA,{recursive:true});fs.mkdirSync(BACKUPS,{recursive:true});if(!fs.existsSync(CONFIG)&&fs.existsSync(SEED))fs.copyFileSync(SEED,CONFIG);
+try{if(fs.existsSync(CONFIG)){const x=JSON.parse(fs.readFileSync(CONFIG,'utf8'));x.channels=x.channels||{};x.channels.main=x.channels.main||{};x.channels.sub=x.channels.sub||{};x.channels.main.name='차트서포터의 유튜브 HOT';x.channels.sub.name='의리코인의 유튜브 HOT';fs.writeFileSync(CONFIG,JSON.stringify(x,null,2),'utf8')}}catch(e){console.error('config migration failed',e)}
 function send(res,status,body,type='text/plain; charset=utf-8'){res.writeHead(status,{'Content-Type':type,'Cache-Control':'no-store'});res.end(body)}
 function json(res,status,obj){send(res,status,JSON.stringify(obj),'application/json; charset=utf-8')}
 function readBody(req){return new Promise((resolve,reject)=>{let d='';req.on('data',c=>{d+=c;if(d.length>2e6){reject(new Error('too large'));req.destroy()}});req.on('end',()=>resolve(d));req.on('error',reject)})}
