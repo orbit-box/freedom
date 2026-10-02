@@ -19,7 +19,7 @@
 <section class="panel" id="panel-backup"><div class="card"><h2>설정 백업 / 복원</h2><p class="muted">현재 설정을 JSON으로 내려받거나 이전 설정을 불러올 수 있습니다.</p><div class="toolbar"><button class="btn" onclick="exportConfig()">설정 내보내기</button><label class="btn">설정 가져오기<input id="importFile" type="file" accept="application/json" hidden onchange="importConfig(event)"></label><button class="btn" onclick="logout()">로그아웃</button></div></div></section>
 </main></div></div>
 <script>
-let cfg={},activePage='deposit';const labels={telegram:'무료 텔레그램',mainYouTube:'유튜브 메인채널',subYouTube:'유튜브 서브채널',orangeX:'OrangeX',contact:'상담 문의',membership:'멤버십'};const pageNames={deposit:'입금 방법',withdraw:'출금 방법',trade:'거래 방법',benefit:'이벤트 · 혜택'};
+let cfg={},activePage='deposit';const labels={telegram:'무료 텔레그램',mainYouTube:'유튜브 메인채널',subYouTube:'유튜브 서브채널',orangeX:'OrangeX',contact:'상담 문의',membership:'멤버십'};const pageNames={signup:'가입 방법',deposit:'입금 방법',withdraw:'출금 방법',trade:'거래 방법',benefit:'이벤트 · 혜택'};
 async function api(url,opt={}){const r=await fetch(url,{credentials:'same-origin',headers:{'Content-Type':'application/json',...(opt.headers||{})},...opt});if(r.status===401)throw new Error('unauthorized');return r}
 async function login(){const pw=document.getElementById('password').value;const r=await fetch('/api/admin/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({password:pw})});if(r.ok)boot();else document.getElementById('loginMsg').textContent='비밀번호를 확인해 주세요.'}
 async function logout(){await fetch('/api/admin/logout',{method:'POST'});location.reload()}
