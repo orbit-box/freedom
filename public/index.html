@@ -19,6 +19,76 @@
 .community{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.communityCard{border:1px solid #29292c;border-radius:17px;background:linear-gradient(180deg,#121214,#0b0b0c);padding:17px;display:flex;align-items:center;gap:12px}.cIcon{width:44px;height:44px;display:grid;place-items:center;flex:0 0 auto}.cIcon svg{width:42px;height:42px}.communityCard b{display:block;font-size:13px}.communityCard span{display:block;color:#888;font-size:10px;margin-top:2px}.membership{margin-top:18px;border:1px solid #282828;border-radius:19px;padding:19px 21px;background:linear-gradient(120deg,#0d0d0e,#12100d);display:grid;grid-template-columns:auto 1fr auto;gap:15px;align-items:center}.memberIcon{width:44px;height:44px;border-radius:13px;border:1px solid #42321f;color:#ffb347;display:grid;place-items:center}.membership b{display:block}.membership span{font-size:11px;color:#85858c}.notice{margin-top:18px;padding:18px;border:1px solid #222;border-radius:16px;color:#777;font-size:11px}.footer{border-top:1px solid #181819;padding:26px 0 42px;color:#5f5f65;font-size:11px}
 @media(max-width:980px){.menu{display:none}.heroGrid,.freeBox,.exchange{grid-template-columns:1fr}.channels{grid-template-columns:1fr}.community{grid-template-columns:repeat(2,1fr)}.exchangeArt{order:-1;min-height:320px}}
 @media(max-width:640px){.wrap{width:min(100% - 24px,1180px)}.navin{height:64px}.hero{padding:54px 0 36px}h1{font-size:48px}.market{min-height:340px}.tgFloat{width:178px;right:12px;top:80px}.section{padding:40px 0}.freeBox{padding:24px}.freeTitle h2{font-size:30px}.featureGrid{grid-template-columns:1fr}.videos{grid-template-columns:1fr 1fr}.guideGrid{grid-template-columns:1fr 1fr}.community{grid-template-columns:1fr}.membership{grid-template-columns:auto 1fr}.membership .smallBtn{grid-column:1/-1}.actions{display:grid;grid-template-columns:1fr 1fr}.actions .telegram{grid-column:1/-1}.btn{font-size:12px;padding:12px}.exchangeCopy{padding:26px}.exchangeCopy h2{font-size:44px}}
+
+@media(max-width:640px){
+  html{-webkit-text-size-adjust:100%}
+  body{font-size:15px;line-height:1.65}
+  .wrap{width:calc(100% - 28px)}
+  .navin{height:60px;gap:10px}
+  .brand{font-size:17px}
+  .logo{width:30px;height:30px;font-size:15px}
+  .topCta{min-height:44px;padding:0 13px;display:inline-flex;align-items:center;font-size:12px}
+  .hero{padding:38px 0 28px}
+  .heroGrid{gap:24px}
+  .eyebrow{font-size:11px;line-height:1.45;margin-bottom:12px}
+  h1{font-size:clamp(38px,11vw,50px);line-height:1.02;letter-spacing:-.055em;margin:0 0 18px}
+  .lead{font-size:15px;line-height:1.75;word-break:keep-all}
+  .note{font-size:12px;line-height:1.6}
+  .actions{grid-template-columns:1fr;gap:9px}
+  .actions .telegram{grid-column:auto}
+  .btn{min-height:48px;padding:13px 14px;font-size:13px;line-height:1.25;justify-content:center;text-align:center}
+  .market{min-height:0;aspect-ratio:3/2;border-radius:20px}
+  .marketTop,.chart,.tgFloat,.marketTag{display:none}
+  .heroUpload{object-fit:contain;background:#070707}
+  .section{padding:34px 0}
+  .sectionHead{margin-bottom:18px}
+  .sectionHead h2{font-size:30px;line-height:1.15;margin:5px 0 8px}
+  .sectionHead p{font-size:14px;line-height:1.65}
+  .micro{font-size:10px}
+  .freeBox{padding:20px;border-radius:20px;gap:20px}
+  .freeTitle{gap:10px;align-items:flex-start}
+  .tgIcon{width:48px;height:48px;border-radius:14px}
+  .freeTitle h2{font-size:27px;line-height:1.18}
+  .freeLeft p{font-size:14px;line-height:1.7}
+  .featureGrid{grid-template-columns:1fr;gap:8px}
+  .feature{padding:13px}
+  .feature b{font-size:13px}
+  .feature span{font-size:11px;line-height:1.5}
+  .channels{gap:14px}
+  .channel{border-radius:19px}
+  .channelHead{padding:16px;gap:10px;align-items:flex-start}
+  .chName{gap:9px}
+  .chName b{font-size:16px;line-height:1.3}
+  .chName span{font-size:11px;line-height:1.45}
+  .smallBtn{min-height:40px;padding:10px 11px;white-space:nowrap}
+  .videos{grid-template-columns:1fr;padding:0 12px 12px;gap:10px}
+  .videoCard{border-radius:13px}
+  .videoInfo{padding:11px 12px 12px}
+  .videoInfo b{font-size:13px;line-height:1.45}
+  .videoInfo span{font-size:11px}
+  .exchange{border-radius:20px;min-height:0}
+  .exchangeArt{min-height:0;aspect-ratio:3/2;background-size:contain;background-repeat:no-repeat}
+  .exchangeCopy{padding:22px}
+  .exchangeCopy h2{font-size:38px;line-height:1.08}
+  .exchangeCopy p{font-size:14px;line-height:1.7}
+  .guideGrid{grid-template-columns:1fr;gap:9px}
+  .guide{min-height:112px}
+  .community{grid-template-columns:1fr;gap:9px}
+  .communityCard{padding:14px;min-height:72px}
+  .membership{padding:16px;grid-template-columns:auto 1fr;border-radius:16px}
+  .membership b{font-size:13px}
+  .membership span{font-size:11px;line-height:1.5}
+  .notice{font-size:11px;line-height:1.7}
+}
+@media(max-width:420px){
+  .wrap{width:calc(100% - 22px)}
+  .topCta{font-size:11px;padding:0 10px}
+  h1{font-size:39px}
+  .sectionHead h2{font-size:27px}
+  .channelHead{flex-direction:column}
+  .smallBtn{width:100%;text-align:center}
+  .freeTitle h2{font-size:25px}
+}
 </style>
 </head><body>
 <nav class="nav"><div class="wrap navin"><a class="brand" href="/"><span class="logo">F</span>FREEDOM</a><div class="menu"><a href="#free">무료 텔레그램</a><a href="#youtube">유튜브</a><a href="#exchange">거래소 가이드</a><a href="#community">커뮤니티</a></div><a class="topCta js-contact" href="#">상담 문의</a></div></nav>
