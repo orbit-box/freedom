@@ -396,5 +396,12 @@
         "url": "#"
       }
     ]
+  },
+  "youtubeAuto": {
+    "enabled": false,
+    "mainChannelId": "",
+    "subChannelId": "",
+    "count": 3,
+    "cacheMinutes": 10
   }
 }
