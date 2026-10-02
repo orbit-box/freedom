@@ -19,7 +19,7 @@ if(pathname==='/api/admin/logout'&&req.method==='POST'){const t=parseCookies(req
 if(pathname==='/api/admin/config'){if(!isAdmin(req))return json(res,401,{error:'unauthorized'});if(req.method==='GET')return json(res,200,loadConfig());if(req.method==='PUT'){saveConfig(JSON.parse(await readBody(req)||'{}'));return json(res,200,{ok:true})}}
 if(pathname.startsWith('/page/')){const slug=pathname.split('/').filter(Boolean)[1]||'';if(!['deposit','withdraw','trade','benefit'].includes(slug))return send(res,404,'Not found');const tpl=fs.readFileSync(path.join(PUBLIC,'pages','guide.html'),'utf8').replaceAll('__SLUG__',slug);return send(res,200,tpl,'text/html; charset=utf-8')}
 if(pathname==='/admin'||pathname==='/admin/')return serveFile(res,path.join(PUBLIC,'admin.html'))||send(res,404,'Not found');
-if(pathname==='/'){const dir=path.join(PUBLIC,'index_parts');const parts=fs.readdirSync(dir).filter(n=>/^index\.part\d+\.txt$/.test(n)).sort();return send(res,200,parts.map(n=>fs.readFileSync(path.join(dir,n),'utf8')).join(''),'text/html; charset=utf-8')}
+if(pathname==='/')return serveFile(res,path.join(PUBLIC,'index.html'))||send(res,404,'Not found');
 const file=path.normalize(path.join(PUBLIC,pathname.replace(/^\//,'')));if(!file.startsWith(PUBLIC))return send(res,403,'Forbidden');if(serveFile(res,file))return;send(res,404,'Not found');
 }catch(e){console.error(e);json(res,500,{error:'server_error'})}});
 server.listen(PORT,()=>console.log(`FREEDOM site running on port ${PORT}`));
